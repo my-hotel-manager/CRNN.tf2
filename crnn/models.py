@@ -44,7 +44,7 @@ def build_model(num_classes, img_shape=(32, None, 3)):
     """ build CNN-RNN model """
 
     img_input = keras.Input(shape=img_shape)
-    x = preprocessing.Rescaling(1.0 / 255)(img_input)
+    # x = preprocessing.Rescaling(1.0 / 255)(img_input)
     
     x = vgg_style(x)
 
