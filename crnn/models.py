@@ -46,7 +46,7 @@ def build_model(num_classes, img_shape=(32, None, 3)):
     img_input = keras.Input(shape=img_shape)
     # x = preprocessing.Rescaling(1.0 / 255)(img_input)
     
-    x = vgg_style(x)
+    x = vgg_style(img_input)
 
     x = layers.Bidirectional(
         layers.LSTM(units=256, return_sequences=True), name='bi_lstm1')(x)

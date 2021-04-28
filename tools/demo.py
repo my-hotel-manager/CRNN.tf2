@@ -35,7 +35,7 @@ def read_img_and_resize(path, shape):
 
 
 model = keras.models.load_model(args.model, compile=False)
-decoder = decoders.CTCGreedyDecoder(config['table_path'])
+decoder = decoders.CTCBeamSearchDecoder(config['table_path'])
 
 p = Path(args.images)
 if p.is_dir():
